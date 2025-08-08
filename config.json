@@ -1,0 +1,32 @@
+{
+  "token": "Token",
+  "prefix": "cp!",
+  "debug": true,
+  "clone_settings": {
+    "name_syntax": "%original%-App",
+    "clone_delay": 1.337,
+    "clear_guild": true,
+    "icon": true,
+    "banner": true,
+    "roles": false,
+    "channels": true,
+    "overwrites": true,
+    "emoji": true,
+    "stickers": true
+  },
+  "clone_messages": {
+    "__comment__": "Clone messages in all channels (last messages). Long limit - long time need to copy",
+    "enabled": true,
+    "oldest_first": true,
+    "webhooks_clear": true,
+    "limit": 8196,
+    "delay": 1.95
+  },
+  "live_update": {
+    "__comment__": "Automatically detect new messages and send it via webhook",
+    "__comment2__": "Also works with clone_messages (starts sending when channel is fully processed)",
+    "enabled": true,
+    "process_new_messages": true,
+    "message_delay": 1.92
+  }
+}
