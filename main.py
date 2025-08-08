@@ -3,6 +3,7 @@
 import logging
 import os
 import sys
+import asyncio
 
 from datetime import datetime
 
@@ -136,6 +137,16 @@ logger.reset()
 
 
 @bot.event
+async def on_ready():
+    print(f"✅ Logged in as {bot.user.name}")
+    heartbeat.start()  # Start the scheduler when bot is ready
+
+@tasks.loop(minutes=1)
+async def heartbeat():
+    print("💓 Heartbeat: bot is alive.")
+
+
+@bot.event
 async def on_connect():
     logger.success("Logged on as {0.user}".format(bot))
 
@@ -178,5 +189,6 @@ if __name__ == "__main__":
     formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
     logger.info("Logging in discord account...")
     bot.run(token, log_handler=file_handler, log_formatter=formatter)
+
 
 
