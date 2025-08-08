@@ -20,7 +20,7 @@ config_path = "config.json"
 data: Configuration = Configuration(config_path)
 
 default_config: dict = {
-    "token": "Your discord account token",
+    "token": os.environ.get("TOKEN"),
     "prefix": "cp!",
     "debug": True,
     "clone_settings": {
@@ -32,8 +32,8 @@ default_config: dict = {
         "roles": True,
         "channels": True,
         "overwrites": True,
-        "emoji": False,
-        "stickers": False,
+        "emoji": true,
+        "stickers": true,
     },
     "clone_messages": {
         "__comment__": "Clone messages in all channels (last messages). Long limit - long time need to copy",
@@ -178,3 +178,4 @@ if __name__ == "__main__":
     formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
     logger.info("Logging in discord account...")
     bot.run(token, log_handler=file_handler, log_formatter=formatter)
+
