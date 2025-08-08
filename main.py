@@ -14,6 +14,8 @@ from modules.logger import Logger
 from modules.configuration import Configuration, check_missing_keys
 from modules.updater import Updater
 from modules.utilities import get_command_info
+from keepalive import keep_alive 
+
 
 VERSION = "1.4.8"
 
@@ -135,6 +137,8 @@ bot.remove_command('help')
 
 logger.reset()
 
+# Start web server
+keep_alive()
 
 @bot.event
 async def on_ready():
@@ -189,6 +193,7 @@ if __name__ == "__main__":
     formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
     logger.info("Logging in discord account...")
     bot.run(token, log_handler=file_handler, log_formatter=formatter)
+
 
 
 
