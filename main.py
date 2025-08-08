@@ -8,7 +8,7 @@ import asyncio
 from datetime import datetime
 
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 
 from modules.logger import Logger
 from modules.configuration import Configuration, check_missing_keys
@@ -189,6 +189,7 @@ if __name__ == "__main__":
     formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
     logger.info("Logging in discord account...")
     bot.run(token, log_handler=file_handler, log_formatter=formatter)
+
 
 
 
