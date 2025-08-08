@@ -20,7 +20,7 @@ config_path = "config.json"
 data: Configuration = Configuration(config_path)
 
 default_config: dict = {
-    "token": os.environ.get("TOKEN"),
+    "token": "enter your token",
     "prefix": "cp!",
     "debug": True,
     "clone_settings": {
@@ -73,7 +73,7 @@ if missing_keys:
 config_values = new_config
 
 token, prefix, debug = (
-    config_values["token"],
+    os.environ.get("TOKEN"),
     config_values["prefix"],
     config_values["debug"],
 )
