@@ -32,8 +32,8 @@ default_config: dict = {
         "roles": True,
         "channels": True,
         "overwrites": True,
-        "emoji": true,
-        "stickers": true,
+        "emoji": True,
+        "stickers": True,
     },
     "clone_messages": {
         "__comment__": "Clone messages in all channels (last messages). Long limit - long time need to copy",
@@ -178,4 +178,5 @@ if __name__ == "__main__":
     formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
     logger.info("Logging in discord account...")
     bot.run(token, log_handler=file_handler, log_formatter=formatter)
+
 
