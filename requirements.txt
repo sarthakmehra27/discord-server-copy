@@ -4,3 +4,4 @@ pillow==10.2.0
 asyncio==3.4.3
 packaging==23.2
 requests
+flask
